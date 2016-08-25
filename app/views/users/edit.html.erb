@@ -1,0 +1,30 @@
+<h1>Edit <%=@user.name%> page</h1>
+<form action="/users/<%=@user.id%>" method="post">
+	<input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"
+
+	<label for="Name">Name</label>
+	<input id="Name" type="text" name="user[name]" placeholder="<%=@user.name%>" value="<%=@user.name%>">
+	<label for="email">Email</label>
+	<input id="email" type="text" name="user[email]" placeholder="<%=@user.email%>" value="<%=@user.email%>">
+	<input type="hidden" name="user[password]" value="<%=@user.password%>">
+	<input type="hidden" name="user[password_confirmation]" value="<%=@user.password_confirmation%>">
+	<button type="submit" class="btn btn-default" name="Update">Update</button>
+</form>
+
+<form action="/users/<%=@user.id%>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+	<button type="submit" class="btn btn_default" value="delete">Delete Account</button>
+</form>
+
+<%=flash[:errors]%>
+<%=flash[:success]%>
+
+
+
+
+
+
+
+
